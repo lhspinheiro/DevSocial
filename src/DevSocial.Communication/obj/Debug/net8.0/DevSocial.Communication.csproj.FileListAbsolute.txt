@@ -9,3 +9,4 @@
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/refint/DevSocial.Communication.dll
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.pdb
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/ref/DevSocial.Communication.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.sourcelink.json

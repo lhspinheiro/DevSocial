@@ -1,5 +1,6 @@
 using DevSocial.Domain.Entitie;
 using DevSocial.Domain.Repositories.Posts;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevSocial.Infrastructure.Data.Repositories;
 
@@ -23,9 +24,9 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         throw new NotImplementedException();
     }
 
-    public Task<List<PostEntitie>> GetAllAsync()
+    public async Task<List<PostEntitie>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Posts.AsNoTracking().ToListAsync();
     }
 
     public Task<PostEntitie?> GetByIdAsync(int id)

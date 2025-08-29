@@ -1,3 +1,4 @@
+using DevSocial.Application.UseCases.Posts.GetAll;
 using DevSocial.Application.UseCases.Posts.Register;
 using DevSocial.Communication.Request;
 using DevSocial.Communication.Response;
@@ -18,6 +19,16 @@ namespace DevSocial.API.Controllers
             var response = await useCase.Execute(request);
             
             return Created(string.Empty, response);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(ResponseLIstPostJson), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetAll([FromServices] IGetAllPostUseCase useCase)
+        {
+            var response = await useCase.Execute();
+            
+            return Ok(response);
         }
     }
 }
