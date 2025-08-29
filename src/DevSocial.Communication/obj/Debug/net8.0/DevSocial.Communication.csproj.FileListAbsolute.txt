@@ -1,0 +1,11 @@
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/bin/Debug/net8.0/DevSocial.Communication.deps.json
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/bin/Debug/net8.0/DevSocial.Communication.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/bin/Debug/net8.0/DevSocial.Communication.pdb
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.GeneratedMSBuildEditorConfig.editorconfig
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.AssemblyInfoInputs.cache
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.AssemblyInfo.cs
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.csproj.CoreCompileInputs.cache
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/refint/DevSocial.Communication.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/DevSocial.Communication.pdb
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/Debug/net8.0/ref/DevSocial.Communication.dll

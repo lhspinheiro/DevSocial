@@ -1,0 +1,11 @@
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/bin/Debug/net8.0/DevSocial.Domain.deps.json
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/bin/Debug/net8.0/DevSocial.Domain.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/bin/Debug/net8.0/DevSocial.Domain.pdb
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/DevSocial.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/DevSocial.Domain.AssemblyInfoInputs.cache
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/DevSocial.Domain.AssemblyInfo.cs
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/DevSocial.Domain.csproj.CoreCompileInputs.cache
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/DevSocial.Domain.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/refint/DevSocial.Domain.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/DevSocial.Domain.pdb
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/Debug/net8.0/ref/DevSocial.Domain.dll

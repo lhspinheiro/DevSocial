@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mgu9jIHPQMsXmYaPf+BmesWvzhSixpH5rc55KN9zLxI=",
+  "Source": "DevSocial.API",
+  "BasePath": "_content/DevSocial.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

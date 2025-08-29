@@ -1,0 +1,11 @@
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/bin/Debug/net8.0/DevSocial.Exception.deps.json
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/bin/Debug/net8.0/DevSocial.Exception.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/bin/Debug/net8.0/DevSocial.Exception.pdb
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/DevSocial.Exception.GeneratedMSBuildEditorConfig.editorconfig
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/DevSocial.Exception.AssemblyInfoInputs.cache
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/DevSocial.Exception.AssemblyInfo.cs
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/DevSocial.Exception.csproj.CoreCompileInputs.cache
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/DevSocial.Exception.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/refint/DevSocial.Exception.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/DevSocial.Exception.pdb
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/obj/Debug/net8.0/ref/DevSocial.Exception.dll

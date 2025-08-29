@@ -1,0 +1,258 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Application/DevSocial.Application.csproj": {}
+  },
+  "projects": {
+    "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Application/DevSocial.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Application/DevSocial.Application.csproj",
+        "projectName": "DevSocial.Application",
+        "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Application/DevSocial.Application.csproj",
+        "packagesPath": "/home/lhspinheiro/.nuget/packages/",
+        "outputPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/lhspinheiro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/DevSocial.Communication.csproj": {
+                "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/DevSocial.Communication.csproj"
+              },
+              "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj": {
+                "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj"
+              },
+              "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/DevSocial.Infrastructure.csproj": {
+                "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/DevSocial.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/DevSocial.Communication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/DevSocial.Communication.csproj",
+        "projectName": "DevSocial.Communication",
+        "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/DevSocial.Communication.csproj",
+        "packagesPath": "/home/lhspinheiro/.nuget/packages/",
+        "outputPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Communication/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/lhspinheiro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj",
+        "projectName": "DevSocial.Domain",
+        "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj",
+        "packagesPath": "/home/lhspinheiro/.nuget/packages/",
+        "outputPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/lhspinheiro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/DevSocial.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/DevSocial.Infrastructure.csproj",
+        "projectName": "DevSocial.Infrastructure",
+        "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/DevSocial.Infrastructure.csproj",
+        "packagesPath": "/home/lhspinheiro/.nuget/packages/",
+        "outputPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/lhspinheiro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj": {
+                "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.19, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.118/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
