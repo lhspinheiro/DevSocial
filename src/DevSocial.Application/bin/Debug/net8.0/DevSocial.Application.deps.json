@@ -204,6 +204,9 @@
         }
       },
       "DevSocial.Domain/1.0.0": {
+        "dependencies": {
+          "DevSocial.Communication": "1.0.0"
+        },
         "runtime": {
           "DevSocial.Domain.dll": {}
         }

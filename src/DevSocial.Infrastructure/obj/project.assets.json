@@ -287,9 +287,22 @@
           }
         }
       },
+      "DevSocial.Communication/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/DevSocial.Communication.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DevSocial.Communication.dll": {}
+        }
+      },
       "DevSocial.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DevSocial.Communication": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/DevSocial.Domain.dll": {}
         },
@@ -781,6 +794,11 @@
         "pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512",
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
+    },
+    "DevSocial.Communication/1.0.0": {
+      "type": "project",
+      "path": "../DevSocial.Communication/DevSocial.Communication.csproj",
+      "msbuildProject": "../DevSocial.Communication/DevSocial.Communication.csproj"
     },
     "DevSocial.Domain/1.0.0": {
       "type": "project",

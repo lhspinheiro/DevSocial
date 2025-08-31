@@ -13,7 +13,6 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         _context = context;
     }
     
-    
     public Task<PostEntitie> GetById(long id)
     {
         throw new NotImplementedException();

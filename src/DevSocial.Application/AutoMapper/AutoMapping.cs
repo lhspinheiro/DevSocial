@@ -17,10 +17,21 @@ public class AutoMapping : Profile
     private void RequestToEntity()
     {
         CreateMap<RequestPostJson, PostEntitie>();
+        CreateMap<RequestToReplyJson, ReplyEntitie>();
+        
     }
 
     private void EntityToResponse()
     {
         CreateMap<PostEntitie, ResponsePostJson>();
+        CreateMap<ReplyEntitie, ResponseReplyJSon>()
+            .ForMember(dest => dest.Post, 
+                opt => opt.MapFrom(src => src.Post.Post))
+            .ForMember(dest => dest.Reply, 
+                opt => opt.MapFrom(src => src.Reply));
+        
+        CreateMap<ReplyEntitie, ResponseListReplyJson>()
+            .ForMember(dest => dest.Reply, 
+                opt => opt.MapFrom(src => new List<ReplyEntitie> {src}));
     }
 }

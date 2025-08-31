@@ -186,7 +186,15 @@
           }
         }
       },
+      "DevSocial.Communication/1.0.0": {
+        "runtime": {
+          "DevSocial.Communication.dll": {}
+        }
+      },
       "DevSocial.Domain/1.0.0": {
+        "dependencies": {
+          "DevSocial.Communication": "1.0.0"
+        },
         "runtime": {
           "DevSocial.Domain.dll": {}
         }
@@ -310,6 +318,11 @@
       "sha512": "sha512-gOHP6v/nFp5V/FgHqv9mZocGqCLGofihEX9dTbLhiXX3H7SJHmGX70GIPUpiqLT+1jIfDxg1PZh9MTUKuk7Kig==",
       "path": "pomelo.entityframeworkcore.mysql/8.0.3",
       "hashPath": "pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512"
+    },
+    "DevSocial.Communication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DevSocial.Domain/1.0.0": {
       "type": "project",

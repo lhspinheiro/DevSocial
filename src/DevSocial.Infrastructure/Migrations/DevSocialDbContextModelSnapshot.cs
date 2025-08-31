@@ -45,6 +45,39 @@ namespace DevSocial.Infrastructure.Migrations
 
                     b.ToTable("Posts");
                 });
+
+            modelBuilder.Entity("DevSocial.Domain.Entitie.ReplyEntitie", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reply")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("Replys");
+                });
+
+            modelBuilder.Entity("DevSocial.Domain.Entitie.ReplyEntitie", b =>
+                {
+                    b.HasOne("DevSocial.Domain.Entitie.PostEntitie", "Post")
+                        .WithMany()
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+                });
 #pragma warning restore 612, 618
         }
     }

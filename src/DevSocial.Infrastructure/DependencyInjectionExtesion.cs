@@ -1,5 +1,6 @@
 using DevSocial.Domain.Repositories;
 using DevSocial.Domain.Repositories.Posts;
+using DevSocial.Domain.Repositories.Reply;
 using DevSocial.Infrastructure.Data;
 using DevSocial.Infrastructure.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,10 @@ public static class DependencyInjectionExtesion
         services.AddScoped<IPostsReadOnlyRepository ,PostsRepository>();
         services.AddScoped<IPostsWriteOnlyRepository ,PostsRepository>();
         services.AddScoped<IPostsUpdateOnlyRepository ,PostsRepository>();
+        services.AddScoped<IReplyReadOnlyRepository, ReplyRepository>();
+        services.AddScoped<IReplyWriteOnlyRepository, ReplyRepository>();
+        services.AddScoped<IReplyUpdateOnlyRepository,ReplyRepository>();
+        
     }
 
     private static void AddDbContext(this IServiceCollection services, IConfiguration configuration)

@@ -1,6 +1,7 @@
 using DevSocial.Application.AutoMapper;
 using DevSocial.Application.UseCases.Posts.GetAll;
 using DevSocial.Application.UseCases.Posts.Register;
+using DevSocial.Application.UseCases.Reply.Reply;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DevSocial.Application;
@@ -22,5 +23,6 @@ public static class DependencyInjectionExtesion
     {
         services.AddScoped<IRegisterPostUseCase, RegisterPostUseCase>();
         services.AddScoped<IGetAllPostUseCase, GetAllPostUseCase>();
+        services.AddScoped<IReplyUSeCase, ReplyUSeCase>();
     }
 }

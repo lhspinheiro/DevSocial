@@ -14,3 +14,5 @@
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/obj/Debug/net8.0/DevSocial.Infrastructure.pdb
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/obj/Debug/net8.0/ref/DevSocial.Infrastructure.dll
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/obj/Debug/net8.0/DevSocial.Infrastructure.sourcelink.json
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/bin/Debug/net8.0/DevSocial.Communication.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/bin/Debug/net8.0/DevSocial.Communication.pdb

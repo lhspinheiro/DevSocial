@@ -8,4 +8,5 @@ public class DevSocialDbContext : DbContext
     public DevSocialDbContext(DbContextOptions options) : base(options){}
     
     public DbSet<PostEntitie> Posts {get; set;}
+    public DbSet<ReplyEntitie> Replys {get; set;}
 }
