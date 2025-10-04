@@ -40,13 +40,13 @@ public class ReplyRepository : IReplyReadOnlyRepository, IReplyWriteOnlyReposito
         return await _context.Posts.FirstOrDefaultAsync(post => post.Id == replyId);
     }
 
-    public Task<ReplyEntitie> GetById(long id)
+    public async Task<ReplyEntitie?> GetById(long id)
     {
-        throw new NotImplementedException();
+        return await _context.Replys.FirstOrDefaultAsync(r => r.id == id);
     }
 
     public void Update(ReplyEntitie reply)
     {
-        throw new NotImplementedException();
+        _context.Replys.Update(reply);
     }
 }

@@ -1,4 +1,5 @@
 using DevSocial.Application.UseCases.Reply.Reply;
+using DevSocial.Application.UseCases.Reply.Update;
 using DevSocial.Communication.Request;
 using DevSocial.Communication.Response;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +21,18 @@ namespace DevSocial.API.Controllers
             var response = await uSeCase.Execute(request);
             
             return Created(string.Empty, response);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Update([FromRoute]long id, [FromServices] IUpdateReplyUseCase useCase, [FromBody] RequestToReplyJson request)
+        {
+            await useCase.Execute(id, request);
+            
+            return NoContent();
         }
     }
 }
