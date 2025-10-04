@@ -7,6 +7,7 @@ using DevSocial.Application.UseCases.Posts.Update;
 using DevSocial.Application.UseCases.Reply.Delete;
 using DevSocial.Application.UseCases.Reply.Reply;
 using DevSocial.Application.UseCases.Reply.Update;
+using DevSocial.Application.UseCases.Users.Register;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DevSocial.Application;
@@ -34,5 +35,6 @@ public static class DependencyInjectionExtesion
         services.AddScoped<IReplyUSeCase, ReplyUSeCase>();
         services.AddScoped<IUpdateReplyUseCase, UpdateReplyUseCase>();
         services.AddScoped<IDeleteReplyUseCase, DeleteReplyUseCase>();
+        services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
     }
 }

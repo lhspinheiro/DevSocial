@@ -14,9 +14,9 @@ public class ReplyRepository : IReplyReadOnlyRepository, IReplyWriteOnlyReposito
         _context = context;
     }
     
-    public Task<List<ReplyEntitie>> GetAllAsync()
+    public async Task<List<ReplyEntitie>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        return await _context.Replys.ToListAsync();
     }
 
     public async Task<ReplyEntitie?> GetByIdAsync(int id)

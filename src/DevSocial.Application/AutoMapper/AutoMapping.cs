@@ -18,6 +18,7 @@ public class AutoMapping : Profile
     {
         CreateMap<RequestPostJson, PostEntitie>();
         CreateMap<RequestToReplyJson, ReplyEntitie>();
+        CreateMap<RequestRegisterUserJson, UserEntitie>();
         
     }
 
@@ -33,5 +34,7 @@ public class AutoMapping : Profile
         CreateMap<ReplyEntitie, ResponseListReplyJson>()
             .ForMember(dest => dest.Reply, 
                 opt => opt.MapFrom(src => new List<ReplyEntitie> {src}));
+
+        CreateMap<UserEntitie, ResponseRegisteredUserJson>();
     }
 }

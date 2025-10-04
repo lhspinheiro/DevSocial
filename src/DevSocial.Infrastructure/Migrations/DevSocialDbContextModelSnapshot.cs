@@ -68,6 +68,38 @@ namespace DevSocial.Infrastructure.Migrations
                     b.ToTable("Replys");
                 });
 
+            modelBuilder.Entity("DevSocial.Domain.Entitie.UserEntitie", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<Guid>("UserIdentifier")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("DevSocial.Domain.Entitie.ReplyEntitie", b =>
                 {
                     b.HasOne("DevSocial.Domain.Entitie.PostEntitie", "Post")

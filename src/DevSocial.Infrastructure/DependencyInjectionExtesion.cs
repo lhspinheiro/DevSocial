@@ -1,8 +1,12 @@
 using DevSocial.Domain.Repositories;
 using DevSocial.Domain.Repositories.Posts;
 using DevSocial.Domain.Repositories.Reply;
+using DevSocial.Domain.Repositories.User;
+using DevSocial.Domain.Security.Cyptography;
+using DevSocial.Domain.Security.Tokens;
 using DevSocial.Infrastructure.Data;
 using DevSocial.Infrastructure.Data.Repositories;
+using DevSocial.Infrastructure.Security.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,8 +17,22 @@ public static class DependencyInjectionExtesion
 {
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
+        
+        
+        
         AddDbContext(services, configuration);
         AddRepositories(services);
+        AddToken(services, configuration);
+    }
+
+
+    private static void AddToken(IServiceCollection services, IConfiguration configuration)
+    {
+        var expirationTimes = configuration.GetValue<uint>("Settings:Jwt:ExperiesMinutes");
+        var siginKey = configuration.GetValue<string>("Settings:Jwt:SigningKey");
+        
+        services.AddScoped<IAcessTokenGenerator>(config => new JwtTokenGenerator(expirationTimes, siginKey));
     }
 
     private static void AddRepositories(IServiceCollection services)
@@ -26,6 +44,8 @@ public static class DependencyInjectionExtesion
         services.AddScoped<IReplyReadOnlyRepository, ReplyRepository>();
         services.AddScoped<IReplyWriteOnlyRepository, ReplyRepository>();
         services.AddScoped<IReplyUpdateOnlyRepository,ReplyRepository>();
+        services.AddScoped<IUserReadOnlyRepository, UserRepository>();
+        services.AddScoped<IUserWriteOnlyRepository, UserRepository>();
         
     }
 

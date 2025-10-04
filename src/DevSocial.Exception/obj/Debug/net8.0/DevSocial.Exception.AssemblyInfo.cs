@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevSocial.Exception")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a65b13536d113b6567b6c6a09a53d6786988b1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b7e45d96fd56934a97d7bb34b3470fa9fd66258")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevSocial.Exception")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevSocial.Exception")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

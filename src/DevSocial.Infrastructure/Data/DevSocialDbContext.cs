@@ -9,4 +9,6 @@ public class DevSocialDbContext : DbContext
     
     public DbSet<PostEntitie> Posts {get; set;}
     public DbSet<ReplyEntitie> Replys {get; set;}
+    
+    public DbSet<UserEntitie> Users {get; set;}
 }

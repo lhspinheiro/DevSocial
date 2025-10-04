@@ -8,12 +8,14 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="13.0.1" />
+      <PackageReference Include="FluentValidation" Version="12.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DevSocial.Communication\DevSocial.Communication.csproj" />
       <ProjectReference Include="..\DevSocial.Domain\DevSocial.Domain.csproj" />
+      <ProjectReference Include="..\DevSocial.Exception\DevSocial.Exception.csproj" />
       <ProjectReference Include="..\DevSocial.Infrastructure\DevSocial.Infrastructure.csproj" />
     </ItemGroup>
 

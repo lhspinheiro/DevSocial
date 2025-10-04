@@ -21,7 +21,7 @@ public class DeleteReplyUseCase : IDeleteReplyUseCase
         var result = await _replyReadOnlyRepository.GetByIdAsync(id);
         if (result == null)
         {
-            throw new Exception("not found");
+            throw new System.Exception("not found");
         }
 
         await _replyWriteOnlyRepository.Delete(id);
