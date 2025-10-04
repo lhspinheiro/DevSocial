@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevSocial.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a44f8c8f268f24953e76525cf985fe2c2616d13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a54ab3f051c252bf9bb84ebc613d60af5787c79c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevSocial.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevSocial.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

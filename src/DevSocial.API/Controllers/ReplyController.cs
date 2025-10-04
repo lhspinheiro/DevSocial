@@ -1,3 +1,4 @@
+using DevSocial.Application.UseCases.Reply.Delete;
 using DevSocial.Application.UseCases.Reply.Reply;
 using DevSocial.Application.UseCases.Reply.Update;
 using DevSocial.Communication.Request;
@@ -30,7 +31,18 @@ namespace DevSocial.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update([FromRoute]long id, [FromServices] IUpdateReplyUseCase useCase, [FromBody] RequestToReplyJson request)
         {
-            await useCase.Execute(id, request);
+           await useCase.Execute(id, request);
+            
+            return NoContent();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> Delete([FromRoute] int id,  [FromServices] IDeleteReplyUseCase useCase)
+        {
+            await useCase.Execute(id);
             
             return NoContent();
         }

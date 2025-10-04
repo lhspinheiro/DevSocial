@@ -7,7 +7,7 @@ public interface IReplyWriteOnlyRepository
 {
     public Task Add(ReplyEntitie reply);
     
-    public Task<bool> Delete(long id);
+    public Task Delete(int id);
     
     public Task<PostEntitie?> GetPostById(int replyId);
 }

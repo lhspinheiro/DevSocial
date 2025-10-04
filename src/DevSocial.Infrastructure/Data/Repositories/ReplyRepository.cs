@@ -19,9 +19,9 @@ public class ReplyRepository : IReplyReadOnlyRepository, IReplyWriteOnlyReposito
         throw new NotImplementedException();
     }
 
-    public Task<ReplyEntitie?> GetByIdAsync(int id)
+    public async Task<ReplyEntitie?> GetByIdAsync(int id)
     {
-        throw new NotImplementedException();
+       return await _context.Replys.FirstOrDefaultAsync(r => r.id == id);
     }
 
     public async Task Add(ReplyEntitie reply)
@@ -29,9 +29,12 @@ public class ReplyRepository : IReplyReadOnlyRepository, IReplyWriteOnlyReposito
         await _context.Replys.AddAsync(reply);
     }
 
-    public Task<bool> Delete(long id)
+    public async Task Delete(int id)
     {
-        throw new NotImplementedException();
+        var reply = await _context.Replys.FindAsync(id);
+        
+         _context.Replys.Remove(reply!);
+        
     }
 
     public async Task<PostEntitie?> GetPostById(int replyId)
