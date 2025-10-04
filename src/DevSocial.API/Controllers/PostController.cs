@@ -1,4 +1,5 @@
 using DevSocial.Application.UseCases.Posts.GetAll;
+using DevSocial.Application.UseCases.Posts.GetById;
 using DevSocial.Application.UseCases.Posts.Register;
 using DevSocial.Communication.Request;
 using DevSocial.Communication.Response;
@@ -30,5 +31,17 @@ namespace DevSocial.API.Controllers
             
             return Ok(response);
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        [ProducesResponseType(typeof(ResponseLIstPostJson), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetById([FromRoute] long id,  [FromServices] IGetByIdPostUseCase useCase)
+        {
+            var response = await useCase.Execute(id);
+            
+            return Ok(response);
+        }
+        
     }
 }

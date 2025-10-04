@@ -28,9 +28,9 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         return await _context.Posts.AsNoTracking().ToListAsync();
     }
 
-    public Task<PostEntitie?> GetByIdAsync(int id)
+    public async Task<PostEntitie?> GetByIdAsync(long id)
     {
-        throw new NotImplementedException();
+        return await _context.Posts.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task Add(PostEntitie post)
