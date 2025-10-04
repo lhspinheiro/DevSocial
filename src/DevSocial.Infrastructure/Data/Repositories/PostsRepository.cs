@@ -38,8 +38,11 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         await _context.Posts.AddAsync(post);
     }
 
-    public Task<bool> Delete(long id)
+    public async Task Delete(int id)
     {
-        throw new NotImplementedException();
+        var post = await _context.Posts.FindAsync(id);
+        
+        _context.Posts.Remove(post!);
+       
     }
 }

@@ -6,5 +6,5 @@ public interface IPostsWriteOnlyRepository
 {
     public Task Add(PostEntitie post);
     
-  public Task<bool> Delete(long id);
+  public Task Delete(int id);
 }
