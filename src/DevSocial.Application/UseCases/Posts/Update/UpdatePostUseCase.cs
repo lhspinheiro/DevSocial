@@ -18,7 +18,7 @@ public class UpdatePostUseCase : IUpdatePostUseCase
         _repository = repository;
     }
     
-    public async Task Execute(int id, RequestPostJson request)
+    public async Task Execute(long id, RequestPostJson request)
     {
         var updatePost = await _repository.GetById(id); 
         

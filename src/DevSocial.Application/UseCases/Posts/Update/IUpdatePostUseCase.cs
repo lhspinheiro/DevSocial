@@ -4,5 +4,5 @@ namespace DevSocial.Application.UseCases.Posts.Update;
 
 public interface IUpdatePostUseCase
 {
-    public Task Execute(int id, RequestPostJson request);
+    public Task Execute(long id,  RequestPostJson request);
 }

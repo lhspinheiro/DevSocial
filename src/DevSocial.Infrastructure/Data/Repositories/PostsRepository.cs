@@ -13,14 +13,14 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         _context = context;
     }
     
-    public Task<PostEntitie> GetById(long id)
+    public async Task<PostEntitie> GetById(long id)
     {
-        throw new NotImplementedException();
+        return await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public void Update(PostEntitie post)
     {
-        throw new NotImplementedException();
+        _context.Posts.Update(post);
     }
 
     public async Task<List<PostEntitie>> GetAllAsync()
