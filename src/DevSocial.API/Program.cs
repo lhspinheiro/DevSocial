@@ -1,9 +1,12 @@
+using System.Text;
 using DevSocial.API.Filters;
 using DevSocial.API.Token;
 using DevSocial.Application;
 using DevSocial.Domain.Security.Tokens;
 using DevSocial.Infrastructure;
 using DevSocial.Infrastructure.Migrations;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,12 +24,12 @@ builder.Services.AddSwaggerGen(config =>
         Description = @"JWT Authorization header using the Bearer scheme.
         Enter 'Bearer' [Space] and then your token in the text input below. 
         Example: 'Bearer 12345abcdef'",
-        
+
         In = ParameterLocation.Header,
         Scheme = "Bearer",
         Type = SecuritySchemeType.ApiKey
     });
-    
+
     config.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -51,9 +54,24 @@ builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)))
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddScoped<ITokenProvider, HttpContextTokenValue>();
 builder.Services.AddApplication();
-builder.Services.AddHttpContextAccessor(); 
+builder.Services.AddHttpContextAccessor();
 
 var signingKey = builder.Configuration.GetValue<string>("Settings:Jwt:SigningKey");
+
+builder.Services.AddAuthentication(config =>
+{
+    config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(config =>
+{
+    config.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ClockSkew = new TimeSpan(0),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey!)),
+    };
+});
 
 var app = builder.Build();
 

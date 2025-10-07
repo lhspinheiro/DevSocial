@@ -4,6 +4,7 @@ using DevSocial.Communication.Response;
 using DevSocial.Domain.Entitie;
 using DevSocial.Domain.Repositories;
 using DevSocial.Domain.Repositories.Posts;
+using DevSocial.Domain.Services.LoggedUser;
 using DevSocial.Infrastructure.Data;
 
 namespace DevSocial.Application.UseCases.Posts.Register;
@@ -13,19 +14,24 @@ public class RegisterPostUseCase : IRegisterPostUseCase
     private readonly IPostsWriteOnlyRepository _repository;
     private readonly IUnitOfWork _unitOfWork;
     private IMapper _mapper;
+    private readonly ILoggedUser _loggedUser;
 
 
-    public RegisterPostUseCase(IMapper  mapper, IPostsWriteOnlyRepository  repository, IUnitOfWork unitOfWork)
+    public RegisterPostUseCase(IMapper  mapper, IPostsWriteOnlyRepository  repository, IUnitOfWork unitOfWork, ILoggedUser loggedUser)
     {
         _mapper = mapper;
         _repository = repository;
         _unitOfWork = unitOfWork;
+        _loggedUser = loggedUser;
     }
     
     public async Task<ResponsePostJson> Execute(RequestPostJson request)
     {
+        var loggedUser = await _loggedUser.Get();
+        
         var entity = _mapper.Map<PostEntitie>(request);
         entity.Date = DateTime.Now;
+        entity.UserId = loggedUser.id;
 
         await _repository.Add(entity);
         await _unitOfWork.Commit();

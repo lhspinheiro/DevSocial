@@ -23,9 +23,9 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         _context.Posts.Update(post);
     }
 
-    public async Task<List<PostEntitie>> GetAllAsync()
+    public async Task<List<PostEntitie>> GetAllAsync(UserEntitie user)
     {
-        return await _context.Posts.AsNoTracking().ToListAsync();
+        return await _context.Posts.AsNoTracking().Where(post=> post.UserId == user.id).ToListAsync();
     }
 
     public async Task<PostEntitie?> GetByIdAsync(long id)

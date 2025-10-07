@@ -4,7 +4,7 @@ namespace DevSocial.Domain.Repositories.Posts;
 
 public interface IPostsReadOnlyRepository
 {
-    public Task<List<PostEntitie>> GetAllAsync();
+    public Task<List<PostEntitie>> GetAllAsync(UserEntitie user);
     public Task<PostEntitie?> GetByIdAsync(long id);
     
     
