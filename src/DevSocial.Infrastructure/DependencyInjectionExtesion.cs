@@ -4,9 +4,11 @@ using DevSocial.Domain.Repositories.Reply;
 using DevSocial.Domain.Repositories.User;
 using DevSocial.Domain.Security.Cyptography;
 using DevSocial.Domain.Security.Tokens;
+using DevSocial.Domain.Services.LoggedUser;
 using DevSocial.Infrastructure.Data;
 using DevSocial.Infrastructure.Data.Repositories;
 using DevSocial.Infrastructure.Security.Tokens;
+using DevSocial.Infrastructure.Services.LoggedUser;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,8 +20,7 @@ public static class DependencyInjectionExtesion
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IPasswordEncripter, Security.Cryptography.BCrypt>();
-        
-        
+        services.AddScoped<ILoggedUser, LoggedUser>();
         
         AddDbContext(services, configuration);
         AddRepositories(services);

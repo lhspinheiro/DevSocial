@@ -1,4 +1,5 @@
 using DevSocial.Application.AutoMapper;
+using DevSocial.Application.UseCases.Login;
 using DevSocial.Application.UseCases.Posts.Delete;
 using DevSocial.Application.UseCases.Posts.GetAll;
 using DevSocial.Application.UseCases.Posts.GetById;
@@ -36,5 +37,6 @@ public static class DependencyInjectionExtesion
         services.AddScoped<IUpdateReplyUseCase, UpdateReplyUseCase>();
         services.AddScoped<IDeleteReplyUseCase, DeleteReplyUseCase>();
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
+        services.AddScoped<IDologinUseCase, DologinUseCase>();
     }
 }

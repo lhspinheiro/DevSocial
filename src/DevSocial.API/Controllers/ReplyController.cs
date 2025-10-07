@@ -3,14 +3,14 @@ using DevSocial.Application.UseCases.Reply.Reply;
 using DevSocial.Application.UseCases.Reply.Update;
 using DevSocial.Communication.Request;
 using DevSocial.Communication.Response;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace DevSocial.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+     [Authorize]
     public class ReplyController : ControllerBase
     {
         
