@@ -2,7 +2,7 @@ using DevSocial.Communication.Response;
 
 namespace DevSocial.Application.UseCases.Posts.GetAll;
 
-public interface IGetAllPostUseCase
+public interface IGetAllMyPostsUseCase
 {
     public Task<ResponseLIstPostJson> Execute(); 
 }

@@ -36,6 +36,13 @@ public class RegisterPostUseCase : IRegisterPostUseCase
         await _repository.Add(entity);
         await _unitOfWork.Commit();
         
-        return _mapper.Map<ResponsePostJson>(entity);
+        // return _mapper.Map<ResponsePostJson>(entity);
+
+        return new ResponsePostJson()
+        {
+            Username = loggedUser.Username,
+            Post = entity.Post,
+            Description = entity.Description,
+        };
     }
 }

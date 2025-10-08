@@ -24,7 +24,9 @@ public class AutoMapping : Profile
 
     private void EntityToResponse()
     {
-        CreateMap<PostEntitie, ResponsePostJson>();
+        CreateMap<PostEntitie, ResponsePostJson>().ForMember(dest => dest.Username, 
+            opt => opt.MapFrom(src => src.User.Username));
+        
         CreateMap<ReplyEntitie, ResponseReplyJSon>()
             .ForMember(dest => dest.Post, 
                 opt => opt.MapFrom(src => src.Post.Post))

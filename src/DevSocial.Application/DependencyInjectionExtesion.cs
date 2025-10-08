@@ -3,6 +3,7 @@ using DevSocial.Application.UseCases.Login;
 using DevSocial.Application.UseCases.Posts.Delete;
 using DevSocial.Application.UseCases.Posts.GetAll;
 using DevSocial.Application.UseCases.Posts.GetById;
+using DevSocial.Application.UseCases.Posts.GetMyPosts;
 using DevSocial.Application.UseCases.Posts.Register;
 using DevSocial.Application.UseCases.Posts.Update;
 using DevSocial.Application.UseCases.Reply.Delete;
@@ -29,8 +30,9 @@ public static class DependencyInjectionExtesion
     private static void AddUseCase(IServiceCollection services)
     {
         services.AddScoped<IRegisterPostUseCase, RegisterPostUseCase>();
-        services.AddScoped<IGetAllPostUseCase, GetAllPostUseCase>();
+        services.AddScoped<IGetAllMyPostsUseCase, GetAllMyMyPostsesUseCase>();
         services.AddScoped<IGetByIdPostUseCase, GetByIdPostUseCase>();
+        services.AddScoped<IGetAllPostsUseCase, GetAllPostsUseCase>();
         services.AddScoped<IUpdatePostUseCase, UpdatePostUseCase>();
         services.AddScoped<IDeletePostUseCase, DeletePostUseCase>();
         services.AddScoped<IReplyUSeCase, ReplyUSeCase>();

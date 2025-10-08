@@ -1,32 +1,28 @@
 using AutoMapper;
 using DevSocial.Communication.Response;
 using DevSocial.Domain.Repositories.Posts;
-using DevSocial.Domain.Services.LoggedUser;
 
-namespace DevSocial.Application.UseCases.Posts.GetAll;
+namespace DevSocial.Application.UseCases.Posts.GetMyPosts;
 
-public class GetAllPostUseCase : IGetAllPostUseCase
+public class GetAllPostsUseCase : IGetAllPostsUseCase
 {
     private readonly IPostsReadOnlyRepository  _repository;
     private readonly IMapper _mapper;
-    private readonly ILoggedUser _loggedUser;
 
-    public GetAllPostUseCase(IPostsReadOnlyRepository  repository, IMapper mapper, ILoggedUser loggedUser)
+    public GetAllPostsUseCase(IPostsReadOnlyRepository  repository, IMapper mapper)
     {
         _repository = repository;
         _mapper = mapper;
-        _loggedUser =  loggedUser;
     }
     
     public async Task<ResponseLIstPostJson> Execute()
     {
-        
-        var loggedUser = await _loggedUser.Get();
-        var result = await _repository.GetAllAsync(loggedUser);
-        
+        var result = await _repository.GetAllPosts();
+
         return new ResponseLIstPostJson()
         {
             Posts = _mapper.Map<List<ResponsePostJson>>(result)
         };
+        
     }
 }

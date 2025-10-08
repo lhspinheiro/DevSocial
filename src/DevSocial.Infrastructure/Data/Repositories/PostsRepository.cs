@@ -13,9 +13,9 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         _context = context;
     }
     
-    public async Task<PostEntitie> GetById(long id)
+    public async Task<PostEntitie?> GetById(long id, UserEntitie user)
     {
-        return await _context.Posts.FirstOrDefaultAsync(p => p.Id == id);
+        return await _context.Posts.FirstOrDefaultAsync(p => p.Id == id && p.UserId == user.id);
     }
 
     public void Update(PostEntitie post)
@@ -28,9 +28,14 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         return await _context.Posts.AsNoTracking().Where(post=> post.UserId == user.id).ToListAsync();
     }
 
-    public async Task<PostEntitie?> GetByIdAsync(long id)
+    public async Task<List<PostEntitie>> GetAllPosts()
     {
-        return await _context.Posts.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
+        return await _context.Posts.Include(p => p.User).AsNoTracking().OrderByDescending(p => p.Date).ToListAsync(); 
+    }
+
+    public async Task<PostEntitie?> GetByIdAsync(long id, UserEntitie user)
+    {
+        return await _context.Posts.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id && p.UserId == user.id);
     }
 
     public async Task Add(PostEntitie post)
