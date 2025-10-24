@@ -10,6 +10,7 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "DevSocial.Domain": "1.0.0",
+          "DevSocial.Exception": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.19",
           "Microsoft.Extensions.Configuration.Binder": "8.0.2",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.3",
@@ -262,6 +263,11 @@
         "runtime": {
           "DevSocial.Domain.dll": {}
         }
+      },
+      "DevSocial.Exception/1.0.0": {
+        "runtime": {
+          "DevSocial.Exception.dll": {}
+        }
       }
     }
   },
@@ -431,6 +437,11 @@
       "sha512": ""
     },
     "DevSocial.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevSocial.Exception/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

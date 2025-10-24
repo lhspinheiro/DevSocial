@@ -6,7 +6,6 @@ public abstract class DevSocialException : SystemException
     {
         
     }
-    
     public abstract int StatusCode { get; }
     public abstract List<string> GetErros();
 }

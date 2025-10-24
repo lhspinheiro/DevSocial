@@ -16,7 +16,7 @@ public class ExceptionFilter : IExceptionFilter
         }
         else
         {
-           // ThrowUnkowError(context);
+            ThrowUnkowError(context);
         }
     }
 

@@ -49,4 +49,13 @@
     <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
         <value>Email ou senha invalida!</value>
     </data>
+    <data name="POST_EMPTY" xml:space="preserve">
+        <value>O Post não pode estar vazio!</value>
+    </data>
+    <data name="DESCRIPTION_EMPTY" xml:space="preserve">
+        <value>descrição não pode estar vazia!</value>
+    </data>
+    <data name="NOT_FOUND" xml:space="preserve">
+        <value>Não encontrado!</value>
+    </data>
 </root>

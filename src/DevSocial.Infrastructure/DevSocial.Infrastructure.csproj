@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DevSocial.Domain\DevSocial.Domain.csproj" />
+      <ProjectReference Include="..\DevSocial.Exception\DevSocial.Exception.csproj" />
     </ItemGroup>
 
     <ItemGroup>

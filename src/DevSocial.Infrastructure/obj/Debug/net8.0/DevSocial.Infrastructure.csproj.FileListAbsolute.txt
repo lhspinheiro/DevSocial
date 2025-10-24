@@ -16,3 +16,5 @@
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/obj/Debug/net8.0/DevSocial.Infrastructure.sourcelink.json
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/bin/Debug/net8.0/DevSocial.Communication.dll
 /home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/bin/Debug/net8.0/DevSocial.Communication.pdb
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/bin/Debug/net8.0/DevSocial.Exception.dll
+/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Infrastructure/bin/Debug/net8.0/DevSocial.Exception.pdb

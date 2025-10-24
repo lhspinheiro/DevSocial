@@ -401,6 +401,16 @@
         "runtime": {
           "bin/placeholder/DevSocial.Domain.dll": {}
         }
+      },
+      "DevSocial.Exception/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/DevSocial.Exception.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DevSocial.Exception.dll": {}
+        }
       }
     }
   },
@@ -1047,12 +1057,18 @@
       "type": "project",
       "path": "../DevSocial.Domain/DevSocial.Domain.csproj",
       "msbuildProject": "../DevSocial.Domain/DevSocial.Domain.csproj"
+    },
+    "DevSocial.Exception/1.0.0": {
+      "type": "project",
+      "path": "../DevSocial.Exception/DevSocial.Exception.csproj",
+      "msbuildProject": "../DevSocial.Exception/DevSocial.Exception.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
       "DevSocial.Domain >= 1.0.0",
+      "DevSocial.Exception >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.19",
       "Microsoft.Extensions.Configuration.Binder >= 8.0.2",
       "Pomelo.EntityFrameworkCore.MySql >= 8.0.3",
@@ -1086,6 +1102,9 @@
           "projectReferences": {
             "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj": {
               "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Domain/DevSocial.Domain.csproj"
+            },
+            "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/DevSocial.Exception.csproj": {
+              "projectPath": "/home/lhspinheiro/RiderProjects/DevSocial/src/DevSocial.Exception/DevSocial.Exception.csproj"
             }
           }
         }
@@ -1137,7 +1156,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

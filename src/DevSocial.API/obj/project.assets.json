@@ -2584,6 +2584,7 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "DevSocial.Domain": "1.0.0",
+          "DevSocial.Exception": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.19",
           "Microsoft.Extensions.Configuration.Binder": "8.0.2",
           "Pomelo.EntityFrameworkCore.MySql": "8.0.3",
@@ -7305,7 +7306,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.120/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

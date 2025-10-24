@@ -5,6 +5,7 @@ using DevSocial.Domain.Entitie;
 using DevSocial.Domain.Repositories;
 using DevSocial.Domain.Repositories.Posts;
 using DevSocial.Domain.Services.LoggedUser;
+using DevSocial.Exception.ExceptionBase;
 using DevSocial.Infrastructure.Data;
 
 namespace DevSocial.Application.UseCases.Posts.Register;
@@ -27,6 +28,8 @@ public class RegisterPostUseCase : IRegisterPostUseCase
     
     public async Task<ResponsePostJson> Execute(RequestPostJson request)
     {
+        await Validate(request);
+        
         var loggedUser = await _loggedUser.Get();
         
         var entity = _mapper.Map<PostEntitie>(request);
@@ -36,13 +39,24 @@ public class RegisterPostUseCase : IRegisterPostUseCase
         await _repository.Add(entity);
         await _unitOfWork.Commit();
         
-        // return _mapper.Map<ResponsePostJson>(entity);
-
         return new ResponsePostJson()
         {
             Username = loggedUser.Username,
             Post = entity.Post,
             Description = entity.Description,
         };
+    }
+
+    private async Task Validate(RequestPostJson request)
+    {
+        var validor = new RegisterPostValidator();
+        
+        var result = await validor.ValidateAsync(request);
+
+        if (result.IsValid == false)
+        {
+            var errorMessages = result.Errors.Select(ex => ex.ErrorMessage).ToList();
+            throw new ErrorOnValidationException(errorMessages);
+        }
     }
 }

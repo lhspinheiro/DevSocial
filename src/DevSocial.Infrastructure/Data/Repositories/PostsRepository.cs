@@ -25,7 +25,7 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
 
     public async Task<List<PostEntitie>> GetAllAsync(UserEntitie user)
     {
-        return await _context.Posts.AsNoTracking().Where(post=> post.UserId == user.id).ToListAsync();
+        return await _context.Posts.Include(p => p.User).AsNoTracking().Where(post=> post.UserId == user.id).ToListAsync();
     }
 
     public async Task<List<PostEntitie>> GetAllPosts()
@@ -35,9 +35,16 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
 
     public async Task<PostEntitie?> GetByIdAsync(long id, UserEntitie user)
     {
-        return await _context.Posts.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id && p.UserId == user.id);
+        return await _context.Posts.Include(p => p.User).FirstOrDefaultAsync(p => p.Id == id && p.UserId == user.id);
     }
 
+    public async Task<List<PostEntitie>> GetByPost(string post, UserEntitie user)
+    {
+       return await _context.Posts.Include(p => p.User).AsNoTracking()
+            .Where(p => p.Post.Contains(post) && p.UserId == user.id).ToListAsync();
+       
+    }
+    
     public async Task Add(PostEntitie post)
     {
         await _context.Posts.AddAsync(post);

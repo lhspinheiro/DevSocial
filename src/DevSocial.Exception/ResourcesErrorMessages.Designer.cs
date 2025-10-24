@@ -104,5 +104,23 @@ namespace DevSocial.Exception {
                 return ResourceManager.GetString("EMAIL_OR_PASSWORD_INVALID", resourceCulture);
             }
         }
+        
+        public static string POST_EMPTY {
+            get {
+                return ResourceManager.GetString("POST_EMPTY", resourceCulture);
+            }
+        }
+        
+        public static string DESCRIPTION_EMPTY {
+            get {
+                return ResourceManager.GetString("DESCRIPTION_EMPTY", resourceCulture);
+            }
+        }
+        
+        public static string NOT_FOUND {
+            get {
+                return ResourceManager.GetString("NOT_FOUND", resourceCulture);
+            }
+        }
     }
 }
