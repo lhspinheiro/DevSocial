@@ -11,4 +11,10 @@ public class DevSocialDbContext : DbContext
     public DbSet<ReplyEntitie> Replys {get; set;}
     
     public DbSet<UserEntitie> Users {get; set;}
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<TagEntitie>().ToTable("Tags");
+    }
 }

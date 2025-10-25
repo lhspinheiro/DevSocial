@@ -35,15 +35,17 @@ public class RegisterPostUseCase : IRegisterPostUseCase
         var entity = _mapper.Map<PostEntitie>(request);
         entity.Date = DateTime.Now;
         entity.UserId = loggedUser.id;
+        
 
         await _repository.Add(entity);
         await _unitOfWork.Commit();
-        
+
         return new ResponsePostJson()
         {
             Username = loggedUser.Username,
             Post = entity.Post,
-            Description = entity.Description,
+            Description = entity.Tags.Select(p => p.Tag).ToList(),
+            Date = entity.Date
         };
     }
 

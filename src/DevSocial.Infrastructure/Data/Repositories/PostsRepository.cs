@@ -25,12 +25,15 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
 
     public async Task<List<PostEntitie>> GetMyPosts(UserEntitie user)
     {
-        return await _context.Posts.Include(p => p.User).AsNoTracking().Where(post=> post.UserId == user.id).ToListAsync();
+        return await _context.Posts.Include(p => p.User).Include(p => p.Tags)
+            .AsNoTracking().OrderByDescending(p => p.Date)
+            .Where(post=> post.UserId == user.id).ToListAsync();
     }
 
     public async Task<List<PostEntitie>> GetAllPosts()
     {
-        return await _context.Posts.Include(p => p.User).AsNoTracking().OrderByDescending(p => p.Date).ToListAsync(); 
+        return await _context.Posts.Include(p => p.User).Include(p => p.Tags)
+            .AsNoTracking().OrderByDescending(p => p.Date).ToListAsync(); 
     }
 
     public async Task<PostEntitie?> GetByIdAsync(long id, UserEntitie user)
@@ -40,9 +43,10 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
 
     public async Task<List<PostEntitie>> GetPostByContent(string content)
     {
-       return await _context.Posts.Include(p => p.User).AsNoTracking().OrderByDescending(p => p.Date)
+       return await _context.Posts.Include(p => p.User).Include(p => p.Tags)
+           .AsNoTracking().OrderByDescending(p => p.Date)
             .Where(p => p.Post.Contains(content) 
-                        || p.Description.Contains(content)).ToListAsync();
+                        || p.Tags.Any(t => t.Tag.Contains(content))).ToListAsync();
     }
     
     public async Task Add(PostEntitie post)
