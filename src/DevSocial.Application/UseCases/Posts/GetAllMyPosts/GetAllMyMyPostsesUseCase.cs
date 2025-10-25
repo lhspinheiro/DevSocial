@@ -20,9 +20,8 @@ public class GetAllMyMyPostsesUseCase : IGetAllMyPostsUseCase
     
     public async Task<ResponseLIstPostJson> Execute()
     {
-        
         var loggedUser = await _loggedUser.Get();
-        var result = await _repository.GetAllAsync(loggedUser);
+        var result = await _repository.GetMyPosts(loggedUser);
         
         return new ResponseLIstPostJson()
         {

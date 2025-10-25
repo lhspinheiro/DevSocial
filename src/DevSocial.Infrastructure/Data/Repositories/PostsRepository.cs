@@ -23,7 +23,7 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         _context.Posts.Update(post);
     }
 
-    public async Task<List<PostEntitie>> GetAllAsync(UserEntitie user)
+    public async Task<List<PostEntitie>> GetMyPosts(UserEntitie user)
     {
         return await _context.Posts.Include(p => p.User).AsNoTracking().Where(post=> post.UserId == user.id).ToListAsync();
     }
@@ -38,11 +38,11 @@ public class PostsRepository: IPostsUpdateOnlyRepository, IPostsReadOnlyReposito
         return await _context.Posts.Include(p => p.User).FirstOrDefaultAsync(p => p.Id == id && p.UserId == user.id);
     }
 
-    public async Task<List<PostEntitie>> GetByPost(string post, UserEntitie user)
+    public async Task<List<PostEntitie>> GetPostByContent(string content)
     {
-       return await _context.Posts.Include(p => p.User).AsNoTracking()
-            .Where(p => p.Post.Contains(post) && p.UserId == user.id).ToListAsync();
-       
+       return await _context.Posts.Include(p => p.User).AsNoTracking().OrderByDescending(p => p.Date)
+            .Where(p => p.Post.Contains(content) 
+                        || p.Description.Contains(content)).ToListAsync();
     }
     
     public async Task Add(PostEntitie post)

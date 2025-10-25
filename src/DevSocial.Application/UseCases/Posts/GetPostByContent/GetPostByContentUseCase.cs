@@ -1,4 +1,3 @@
-using System.Globalization;
 using AutoMapper;
 using DevSocial.Communication.Response;
 using DevSocial.Domain.Repositories.Posts;
@@ -6,28 +5,23 @@ using DevSocial.Domain.Services.LoggedUser;
 using DevSocial.Exception;
 using DevSocial.Exception.ExceptionBase;
 
-namespace DevSocial.Application.UseCases.Posts.GetByPost;
+namespace DevSocial.Application.UseCases.Posts.GetPostByContent;
 
-public class GetByPostUseCase : IGetByPostUseCase
+public class GetPostByContentUseCase : IGetPostByContentUseCase
 {
     private readonly IPostsReadOnlyRepository _repository;
     private readonly IMapper _mapper;
-    private readonly ILoggedUser _loggedUser;
     
-
-
-    public GetByPostUseCase(IPostsReadOnlyRepository repository, IMapper mapper, ILoggedUser loggedUser)
+    public GetPostByContentUseCase(IPostsReadOnlyRepository repository, IMapper mapper, ILoggedUser loggedUser)
     {
         _repository = repository;
         _mapper = mapper;
-        _loggedUser = loggedUser;
     }
 
-    public async Task<ResponseLIstPostJson> Execute(string post)
+    public async Task<ResponseLIstPostJson> Execute(string content)
     {
-        var loggedUser = await _loggedUser.Get();
         
-        var result = await _repository.GetByPost(post, loggedUser);
+        var result = await _repository.GetPostByContent(content);
         
         if (!result.Any())
             throw new NotFoundException(ResourcesErrorMessages.NOT_FOUND);

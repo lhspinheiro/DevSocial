@@ -1,7 +1,7 @@
 using DevSocial.Application.UseCases.Posts.Delete;
 using DevSocial.Application.UseCases.Posts.GetAll;
-using DevSocial.Application.UseCases.Posts.GetByPost;
 using DevSocial.Application.UseCases.Posts.GetMyPosts;
+using DevSocial.Application.UseCases.Posts.GetPostByContent;
 using DevSocial.Application.UseCases.Posts.Register;
 using DevSocial.Application.UseCases.Posts.Update;
 using DevSocial.Communication.Request;
@@ -28,7 +28,7 @@ namespace DevSocial.API.Controllers
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("MyPosts")]
         [ProducesResponseType(typeof(ResponseLIstPostJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetAllMyPosts([FromServices] IGetAllMyPostsUseCase useCase)
@@ -52,12 +52,12 @@ namespace DevSocial.API.Controllers
 
         [Authorize]
         [HttpGet]
-        [Route("{post}")]
+        [Route("{content}")]
         [ProducesResponseType(typeof(ResponseLIstPostJson), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetByPost([FromRoute] string post, [FromServices] IGetByPostUseCase useCase)
+        public async Task<IActionResult> GetByPost([FromRoute] string content, [FromServices] IGetPostByContentUseCase useCase)
         {
-            var response = await useCase.Execute(post);
+            var response = await useCase.Execute(content);
             
             return Ok(response);
         }

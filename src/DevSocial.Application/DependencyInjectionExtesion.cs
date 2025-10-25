@@ -2,8 +2,8 @@ using DevSocial.Application.AutoMapper;
 using DevSocial.Application.UseCases.Login;
 using DevSocial.Application.UseCases.Posts.Delete;
 using DevSocial.Application.UseCases.Posts.GetAll;
-using DevSocial.Application.UseCases.Posts.GetByPost;
 using DevSocial.Application.UseCases.Posts.GetMyPosts;
+using DevSocial.Application.UseCases.Posts.GetPostByContent;
 using DevSocial.Application.UseCases.Posts.Register;
 using DevSocial.Application.UseCases.Posts.Update;
 using DevSocial.Application.UseCases.Reply.Delete;
@@ -31,7 +31,7 @@ public static class DependencyInjectionExtesion
     {
         services.AddScoped<IRegisterPostUseCase, RegisterPostUseCase>();
         services.AddScoped<IGetAllMyPostsUseCase, GetAllMyMyPostsesUseCase>();
-        services.AddScoped<IGetByPostUseCase, GetByPostUseCase>();
+        services.AddScoped<IGetPostByContentUseCase, GetPostByContentUseCase>();
         services.AddScoped<IGetAllPostsUseCase, GetAllPostsUseCase>();
         services.AddScoped<IUpdatePostUseCase, UpdatePostUseCase>();
         services.AddScoped<IDeletePostUseCase, DeletePostUseCase>();

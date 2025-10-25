@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevSocial.Communication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2c017f7c65834038f9e8575c5b12ea68b4ccb10")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cacbec8523a083cad6d601b3cd6a0b45fae6ace8")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevSocial.Communication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevSocial.Communication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
