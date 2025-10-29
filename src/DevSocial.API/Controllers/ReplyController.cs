@@ -1,4 +1,5 @@
 using DevSocial.Application.UseCases.Reply.Delete;
+using DevSocial.Application.UseCases.Reply.GetReplyById;
 using DevSocial.Application.UseCases.Reply.Reply;
 using DevSocial.Application.UseCases.Reply.Update;
 using DevSocial.Communication.Request;
@@ -24,6 +25,18 @@ namespace DevSocial.API.Controllers
             return Created(string.Empty, response);
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        [ProducesResponseType(typeof(ResponseListReplyJson), statusCode: StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetReply([FromRoute] int id, [FromServices] IGetReplyByIdUseCase useCase)
+        {
+            var response = await useCase.Execute(id);
+            
+            return Ok(response);
+        }
+        
+
         [HttpPut]
         [Route("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -46,5 +59,7 @@ namespace DevSocial.API.Controllers
             
             return NoContent();
         }
+        
+        
     }
 }

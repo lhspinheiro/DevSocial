@@ -24,6 +24,11 @@ public class ReplyRepository : IReplyReadOnlyRepository, IReplyWriteOnlyReposito
        return await _context.Replys.FirstOrDefaultAsync(r => r.id == id);
     }
 
+    public async Task<ReplyEntitie> GetReplyByIdAsync(int id)
+    {
+        return await _context.Replys.Include(r => r.Post).AsNoTracking().FirstOrDefaultAsync(r => r.id == id);
+    }
+
     public async Task Add(ReplyEntitie reply)
     {
         await _context.Replys.AddAsync(reply);

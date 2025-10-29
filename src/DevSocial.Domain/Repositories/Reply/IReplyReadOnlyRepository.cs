@@ -6,4 +6,6 @@ public interface IReplyReadOnlyRepository
 {
     public Task<List<ReplyEntitie>> GetAllAsync();
     public Task<ReplyEntitie?> GetByIdAsync(int id);
+    
+    public Task<ReplyEntitie> GetReplyByIdAsync(int id);
 }
