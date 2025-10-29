@@ -4,6 +4,7 @@ using DevSocial.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DevSocial.Infrastructure.Migrations
 {
     [DbContext(typeof(DevSocialDbContext))]
-    partial class DevSocialDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251029011915_loggedUserIdIntoReply")]
+    partial class loggedUserIdIntoReply
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
