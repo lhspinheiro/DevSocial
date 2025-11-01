@@ -22,6 +22,7 @@ namespace DevSocial.API.Controllers
         public async Task<IActionResult> Register([FromServices] IRegisterPostUseCase useCase,
             [FromBody] RequestPostJson request)
         {
+            
             var response = await useCase.Execute(request);
 
             return Created(string.Empty, response);

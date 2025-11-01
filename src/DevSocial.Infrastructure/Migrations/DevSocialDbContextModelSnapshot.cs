@@ -44,7 +44,7 @@ namespace DevSocial.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Posts", (string)null);
                 });
 
             modelBuilder.Entity("DevSocial.Domain.Entitie.ReplyEntitie", b =>
@@ -71,7 +71,7 @@ namespace DevSocial.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Replys");
+                    b.ToTable("Replys", (string)null);
                 });
 
             modelBuilder.Entity("DevSocial.Domain.Entitie.TagEntitie", b =>
@@ -125,7 +125,7 @@ namespace DevSocial.Infrastructure.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("DevSocial.Domain.Entitie.PostEntitie", b =>

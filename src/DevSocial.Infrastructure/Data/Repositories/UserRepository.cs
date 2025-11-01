@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DevSocial.Infrastructure.Data.Repositories;
 
-public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository
+public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository, IUserUpdateRepository
 {
     
     private readonly DevSocialDbContext _context;
@@ -39,5 +39,15 @@ public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository
     {
         var userToRemove = await _context.Users.FindAsync(user.id);
         _context.Users.Remove(userToRemove!);
+    }
+
+    public async Task<UserEntitie> GetByIdAsync(int id)
+    {
+        return await _context.Users.FindAsync(id);
+    }
+
+    public void Update(UserEntitie user)
+    {
+        _context.Update(user);
     }
 }

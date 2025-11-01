@@ -22,7 +22,8 @@ public class AutoMapping : Profile
                 ));
         CreateMap<RequestToReplyJson, ReplyEntitie>();
         CreateMap<RequestRegisterUserJson, UserEntitie>();
-        
+        CreateMap<RequestUpdateUserJson, UserEntitie>();
+
     }
 
     private void EntityToResponse()
@@ -43,5 +44,6 @@ public class AutoMapping : Profile
                 opt => opt.MapFrom(src => new List<ReplyEntitie> {src}));
 
         CreateMap<UserEntitie, ResponseRegisteredUserJson>();
+        CreateMap<UserEntitie, ResponseUserProfileJson>();
     }
 }

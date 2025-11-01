@@ -6,7 +6,7 @@ using DevSocial.Domain.Repositories;
 using DevSocial.Domain.Repositories.Posts;
 using DevSocial.Domain.Services.LoggedUser;
 using DevSocial.Exception.ExceptionBase;
-using DevSocial.Infrastructure.Data;
+
 
 namespace DevSocial.Application.UseCases.Posts.Register;
 
@@ -33,10 +33,10 @@ public class RegisterPostUseCase : IRegisterPostUseCase
         var loggedUser = await _loggedUser.Get();
         
         var entity = _mapper.Map<PostEntitie>(request);
+        
         entity.Date = DateTime.Now;
         entity.UserId = loggedUser.id;
         
-
         await _repository.Add(entity);
         await _unitOfWork.Commit();
 
