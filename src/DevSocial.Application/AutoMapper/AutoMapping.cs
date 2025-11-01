@@ -23,6 +23,7 @@ public class AutoMapping : Profile
         CreateMap<RequestToReplyJson, ReplyEntitie>();
         CreateMap<RequestRegisterUserJson, UserEntitie>();
         CreateMap<RequestUpdateUserJson, UserEntitie>();
+        CreateMap<RequestChangePasswordJson, UserEntitie>();
 
     }
 

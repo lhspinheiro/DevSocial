@@ -58,4 +58,7 @@
     <data name="NOT_FOUND" xml:space="preserve">
         <value>Não encontrado!</value>
     </data>
+    <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" xml:space="preserve">
+        <value>Senha insirida é diferente da senha atual</value>
+    </data>
 </root>

@@ -122,5 +122,11 @@ namespace DevSocial.Exception {
                 return ResourceManager.GetString("NOT_FOUND", resourceCulture);
             }
         }
+        
+        public static string PASSWORD_DIFFERENT_CURRENT_PASSWORD {
+            get {
+                return ResourceManager.GetString("PASSWORD_DIFFERENT_CURRENT_PASSWORD", resourceCulture);
+            }
+        }
     }
 }

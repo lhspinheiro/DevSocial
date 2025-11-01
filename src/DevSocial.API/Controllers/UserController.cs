@@ -1,3 +1,4 @@
+using DevSocial.Application.UseCases.Users.ChangePassword;
 using DevSocial.Application.UseCases.Users.Profile;
 using DevSocial.Application.UseCases.Users.Register;
 using DevSocial.Application.UseCases.Users.Update;
@@ -39,13 +40,23 @@ namespace DevSocial.API.Controllers
         [HttpPut]
         [Authorize]
         [ProducesResponseType( StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update([FromServices] IUpdateUserUseCase useCase,
             [FromBody] RequestUpdateUserJson request)
         {
             await useCase.Execute(request);
             
+            return NoContent();
+        }
+
+        [HttpPut("change-password")]
+        [Authorize]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> ChangePassword([FromServices] IChangePasswordUseCase useCase,
+            [FromBody] RequestChangePasswordJson request)
+        {
+            await useCase.Execute(request);
             return NoContent();
         }
     }

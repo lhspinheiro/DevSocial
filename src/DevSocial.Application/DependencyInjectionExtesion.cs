@@ -10,6 +10,7 @@ using DevSocial.Application.UseCases.Reply.Delete;
 using DevSocial.Application.UseCases.Reply.GetReplyById;
 using DevSocial.Application.UseCases.Reply.Reply;
 using DevSocial.Application.UseCases.Reply.Update;
+using DevSocial.Application.UseCases.Users.ChangePassword;
 using DevSocial.Application.UseCases.Users.Profile;
 using DevSocial.Application.UseCases.Users.Register;
 using DevSocial.Application.UseCases.Users.Update;
@@ -46,5 +47,6 @@ public static class DependencyInjectionExtesion
         services.AddScoped<IGetReplyByIdUseCase, GetReplyByIdUseCase>();
         services.AddScoped<IGetUserProfileUseCase, GetUserProfileUseCase>();
         services.AddScoped<IUpdateUserUseCase, UpdateUserUseCase>();
+        services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
     }
 }
